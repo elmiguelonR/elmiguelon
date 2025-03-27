@@ -1,0 +1,32 @@
+Package: elmiguelon
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: c(person("Jenny", "Chung", ,"je.chung301@gmail.com", role = c("aut")),
+            person("Vidal", "Tinoco", ,"vidalmendozatinoco@gmail.com", role = c("aut")),
+            person("Amali", "Jayatileke", ,"amali.jayatileke14@gmail.com", role = c("aut", "cre")))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: 
+    dplyr,
+    future.apply,
+    ggplot2,
+    httr,
+    jsonlite,
+    lubridate,
+    magrittr,
+    RColorBrewer,
+    rlang,
+    rvest,
+    stringi,
+    stringr,
+    text2vec,
+    tibble,
+    tidytext,
+    tm,
+    wordcloud
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+Suggests: knitr, rmarkdown, testthat, withr, mockery

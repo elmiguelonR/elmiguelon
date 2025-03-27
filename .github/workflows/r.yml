@@ -1,0 +1,74 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+#
+# See https://github.com/r-lib/actions/tree/master/examples#readme for
+# additional example workflows available for the R community.
+
+name: R
+
+on:
+  workflow_dispatch:  # Enables manual trigger from GitHub Actions
+  
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        r-version: ['4.1.1']
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up R ${{ matrix.r-version }}
+        uses: r-lib/actions/setup-r@f57f1301a053485946083d7a45022b278929a78a
+        with:
+          r-version: ${{ matrix.r-version }}
+          
+      - name: Install dependencies
+        run: |
+          install.packages(c("remotes", "rcmdcheck"))
+          remotes::install_deps(dependencies = TRUE)
+        shell: Rscript {0}
+        
+      - name: Install DevTools
+        run: |
+          R -e 'install.packages("devtools", repos="https://cloud.r-project.org")'
+
+      - name: Install Extra Packages
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: |
+            any::ggplot2, 
+            any::dplyr, 
+            any::future.apply,
+            any::httr, 
+            any::jsonlite, 
+            any::lubridate,  
+            any::magrittr, 
+            any::RColorBrewer,
+            any::rlang,
+            any::rvest,
+            any::stringi,
+            any::stringr,
+            any::text2vec,
+            any::tibble,
+            any::tidytext,
+            any::tm,
+            any::wordcloud
+            any::testthat
+            any::devtools
+          cache: true
+          
+      - name: Check
+        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
+        shell: Rscript {0}
+        
+      - name: Run Tests
+        run: Rscript -e 'devtools::test()'
+
+      - name: Build Package
+        run: Rscript -e 'devtools::build()'

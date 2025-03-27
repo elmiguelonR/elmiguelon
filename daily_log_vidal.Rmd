@@ -1,0 +1,34 @@
+---
+title: "R Package Development Log"
+author: "Vidal Tinoco"
+date: "2025-03-16"
+output: html_document
+---
+
+# Development Log
+
+## March 12  
+- **Tasks**: Implemented functions: `get_sentiment_openai()`, `get_sentiment_r()`, `get_sentiment()`, `analyze_sentiment()`, `plot_sentiment_distribution()`, `plot_sentiment_over_time()`, `plot_word_cloud()`.  Updated unit tests: test_sentiment_analysis.R
+- **Purpose**: Extended functionality to support sentiment analysis and vizualization. Strengthened the reliability of the package by ensuring test coverage.
+- **GitHub Commit**: [2956918](https://github.com/ajayatil/elmiguelon/commit/295691826952707d83b29ea8d7f9f4ea0319925e)  
+
+## March 13  
+- **Tasks**:Implemented functions: `interactive_plot()`.  Updated unit tests: test_sentiment_analysis.R, for this functio.  
+- **Purpose**:  Extended functionality to support that the user could choose their plot in an interactive way.Strengthened the reliability of the package by ensuring test coverage.
+- **GitHub Commit**: [1fd8407](https://github.com/ajayatil/elmiguelon/commit/1fd8407702db353dcb4eed6f2b9db7b31b5a5b66)  
+
+## March 14  
+- **Tasks**: Added examples to functions for documentation, and managed the warnings.  
+- **Purpose**: Prepared the package for public use with proper documentation.  
+- **GitHub Commit**: [bc3f093](https://github.com/ajayatil/elmiguelon/commit/bc3f0937a5e313211d2c2fc610837c05ee92eae4)  
+
+## March 15  
+- **Tasks**: Updated `README.md` adding example use cases for functions I created.
+- **Purpose**: Enhanced usability with clear examples and documentation.  
+- **GitHub Commit**: [039b49b](https://github.com/ajayatil/elmiguelon/commit/039b49b76f47ae27dc26db10efbaabb6ff0517a4)  
+
+## March 16  
+- **Tasks**: Trying to implement CI with GitHub Actions, creating YAML file in vt branch. Updated vignettes.
+- **Purpose**: Implement Continuous Integration and Continuous Delivery/Deployment.  
+- **GitHub Commit**: [b10cac4](https://github.com/ajayatil/elmiguelon/commit/b10cac44b97ea26fcf783ee29ba493f49250080a)  
+[0d33b54](https://github.com/ajayatil/elmiguelon/commit/0d33b549c8f5961ba6fcff982a2884a8c18d8d0f)
